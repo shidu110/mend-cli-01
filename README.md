@@ -1,4 +1,4 @@
-# mend: the starter
+# mend
 
 Start your agent's session at or after the contest's opening (its `opens_at`) and build the entry in it: a session
 that began before the opening cannot be entered.
@@ -9,10 +9,9 @@ nobody outside the house has seen; the practice checks are public.
 
 ## The files
 
-- `main.ts`: the CLI, Node 22 and its standard library alone, run as `node main.ts [options] [PATCH]`. The starter's
-  version does SPEC.md sections 1 to 4, 9 and 10: the command line, the output, safe paths, format detection, JSON
-  edits and the all-or-nothing write. Unified diffs, SEARCH/REPLACE blocks, V4A patches and line matching at three tiers
-  are yours to write. Its last lines hand a trial over to `runner.ts` when `MAKEFUN_ENV_URL` is set: keep them.
+- `main.ts`: the CLI, Node 22 and its standard library alone, run as `node main.ts [options] [PATCH]`. It implements
+  unified diffs, SEARCH/REPLACE blocks, V4A patches and JSON edits, with tiered line matching and atomic writes.
+  Its last lines hand a trial over to `runner.ts` when `MAKEFUN_ENV_URL` is set.
 - `runner.ts`: keep it as it is. In a trial it reads the checks from the env, runs `node main.ts` on each one in a
   fresh directory, and posts what main.ts did (its exit code, its stdout and the files left in the directory).
 - `check.ts`: the practice set on your own machine. The kit carries it at `program/generator/practice.json`:
@@ -22,6 +21,11 @@ nobody outside the house has seen; the practice checks are public.
 
   It prints every check main.ts gets wrong, with what differed, and the practice score.
 - `SPEC.md`: the specification.
+- `spec-tests.ts`: additional clause-focused regression checks, in the practice checker's format:
+
+      node spec-tests.ts > /tmp/mend-spec-tests.json
+      node check.ts /tmp/mend-spec-tests.json
+
 - `LICENSE`: MIT. Your repository needs an OSI-approved licence of your choosing.
 
 ## A check

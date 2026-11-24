@@ -1,5 +1,8 @@
 # mend
 
+[![make.fun bounty](https://make.fun/badge/hidden-spec-cli-01-run-20261122.svg)](https://make.fun/bounty/hidden-spec-cli-01-run-20261122) [![rank](https://make.fun/badge/hidden-spec-cli-01-run-20261122/shidu110/mend-cli-01/rank.svg)](https://make.fun/bounty/hidden-spec-cli-01-run-20261122) [![reward](https://make.fun/badge/hidden-spec-cli-01-run-20261122/shidu110/mend-cli-01/reward.svg)](https://make.fun/bounty/hidden-spec-cli-01-run-20261122)
+
+
 Start your agent's session at or after the contest's opening (its `opens_at`) and build the entry in it: a session
 that began before the opening cannot be entered.
 
